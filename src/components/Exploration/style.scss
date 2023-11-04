@@ -1,0 +1,53 @@
+.particle_container {
+    width: 30rem;
+    aspect-ratio: 1;
+    position: relative;
+    left: 10rem;
+    cursor: pointer;
+
+    .dot {
+        width: 8px;
+        aspect-ratio: 1;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #fff;
+        display: inline-block;
+        position: absolute;
+        transition: scale 0.2s ease-in-out;
+
+
+        &:hover {
+            scale: 1.4;
+
+        }
+    }
+
+}
+
+
+
+.text_box-container {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    width: 13rem;
+
+    .text_box {
+        width: 10rem;
+
+        &:nth-child(1) {
+            margin-left: 2rem;
+        }
+
+        &:nth-child(2) {
+            margin-left: -9rem;
+
+        }
+    }
+}
+
+#white-blob {
+    bottom: 15rem;
+    left: 60%;
+    box-shadow: 0px 0 8rem 5rem #d8d1d185;
+}

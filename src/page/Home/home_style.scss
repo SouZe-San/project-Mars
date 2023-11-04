@@ -1,6 +1,6 @@
 .bgBlur {
-    height: 100vh;
-    width: inherit;
+
+    width: 100vw;
 }
 
 section.hero-section {
@@ -10,4 +10,10 @@ section.hero-section {
     header {
         height: 10%;
     }
+}
+
+.exploration-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 }

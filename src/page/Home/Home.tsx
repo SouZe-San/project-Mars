@@ -1,24 +1,31 @@
-
 // import React from 'react'
-import HeroSection from '../../components/hero-section/HeroSection'
-import Navbar from '../../components/navbar/Navbar'
-import './home_style.scss'
+
+// Component import
+import Exploration from "../../components/Exploration/Exploration";
+import HeroSection from "../../components/hero-section/HeroSection";
+import Navbar from "../../components/navbar/Navbar";
+
+// style import
+import "./home_style.scss";
 
 const Home = () => {
   return (
     <div className="bgBlur ">
-      <section className='hero-section'> 
+      <section className="hero-section relative">
         {/* NavSection */}
         <header>
-        <Navbar/>
+          <Navbar />
         </header>
         {/* HeroSection */}
-        <HeroSection/>
+        <HeroSection />
       </section>
-        {/*  */}
+      {/* ExplorationSection */}
+      <section className="exploration-section">
+        <Exploration />
+      </section>
       this is home
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
