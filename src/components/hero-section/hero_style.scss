@@ -9,14 +9,19 @@
 }
 
 #heroSection {
+
+    #Canvas {
+        position: absolute !important;
+        translate: 0 10%;
+        height: 60vh;
+        pointer-events: none;
+
+    }
+
     .headTAG {
         font-size: 20rem;
         // font-size: 22.6rem;
-        letter-spacing: 6rem;
-        // position: absolute;
-        // padding: 0 4rem;
-        // padding-top: 4rem;
-        // color: #ae0909;
+        letter-spacing: 12rem;
         padding-top: 5rem;
         color: #711111;
         padding-left: 7rem;
