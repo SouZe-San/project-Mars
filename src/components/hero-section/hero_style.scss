@@ -12,19 +12,24 @@
 
     #Canvas {
         position: absolute !important;
-        translate: 0 10%;
-        height: 60vh;
-        pointer-events: none;
+        // translate: 0 10%;
+        height: 70vh !important;
+        // top: ;
+        // z-index: -1;
 
     }
 
     .headTAG {
+        position: relative;
+        z-index: -2;
         font-size: 20rem;
         // font-size: 22.6rem;
-        letter-spacing: 12rem;
+        letter-spacing: 10rem;
         padding-top: 5rem;
         color: #711111;
         padding-left: 7rem;
+        display: flex;
+        gap: 7rem;
     }
 
     // Other Decoration Div

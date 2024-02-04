@@ -23,3 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
+public/mars.glb
+src/components/mars_model/Model.tsx
