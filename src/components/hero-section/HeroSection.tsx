@@ -1,8 +1,7 @@
-// import React from 'react'
+// import React from "react";
 import { Suspense } from "react";
 import "./hero_style.scss";
 import { Environment, OrbitControls } from "@react-three/drei";
-// import { Model } from "../mars_model/Model.tsx";
 
 import { Canvas } from "@react-three/fiber";
 import MarsModel from "../mars_model/MarsModel.tsx";
@@ -13,15 +12,14 @@ const HeroSection = () => {
       <div className="absolute left_blob blob"></div>
       <div className="absolute right_blob blob"></div>
       {/* 3d Marse  */}
-      <Canvas camera={{ position: [0, 0, 3] }} id="Canvas">
+      <Canvas camera={{ position: [0, 0, 3.1] }} id="Canvas" shadows>
         <Suspense fallback={null}>
-          <ambientLight intensity={0.1} />
-          {/* <Model /> */}
+          <directionalLight position={[5, 5, 5]} castShadow />
           <MarsModel />
+          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={3} />
+          <Environment preset="sunset" background={false} />
         </Suspense>
         {/* minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 2.55}  */}
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={5} />
-        <Environment preset="sunset" background={false} />
       </Canvas>
       {/* Head Line */}
       <h1 className="headTAG">

@@ -14,11 +14,11 @@ const MarsModel = () => {
 
   //   Bump - Displacement - Normal - Roughness - AO - BaseColor
 
-  const [colorMap] = useLoader(THREE.TextureLoader, [
+  const [colorMap, surface_diff, surface_norm] = useLoader(THREE.TextureLoader, [
     name("2k_mars"),
-    // name(),
-    // name(),
-    // name(),
+    // name("surface_bump"),
+    name("surface_diff"),
+    name("surface_norm"),
     // name(),
     // name(),
   ]);
@@ -30,9 +30,19 @@ const MarsModel = () => {
 
   const position: Vector3 | [number, number, number] = [0, 0, 0];
   return (
-    <mesh position={position} ref={goLoRef} rotation={[Math.PI / 2, 0, 0]} scale={1.3}>
-      <sphereGeometry args={[1.5, 55, 55]} />
-      <meshStandardMaterial map={colorMap} />
+    <mesh
+      position={position}
+      ref={goLoRef}
+      castShadow
+      // rotation={[Math.PI / 2, 0, 0]}
+      scale={1.2}
+    >
+      <sphereGeometry args={[1.3, 55, 55]} />
+      <meshStandardMaterial
+        map={colorMap}
+        displacementMap={surface_diff}
+        normalMap={surface_norm}
+      />
     </mesh>
   );
 };
