@@ -2,7 +2,6 @@
 import { Suspense } from "react";
 import "./hero_style.scss";
 import { Environment, OrbitControls } from "@react-three/drei";
-
 import { Canvas } from "@react-three/fiber";
 import MarsModel from "../mars_model/MarsModel.tsx";
 const HeroSection = () => {
@@ -14,12 +13,10 @@ const HeroSection = () => {
       {/* 3d Marse  */}
       <Canvas camera={{ position: [0, 0, 3.1] }} id="Canvas" shadows>
         <Suspense fallback={null}>
-          <directionalLight position={[5, 5, 5]} castShadow />
           <MarsModel />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={3} />
-          <Environment preset="sunset" background={false} />
         </Suspense>
-        {/* minPolarAngle={Math.PI / 2.5} maxPolarAngle={Math.PI / 2.55}  */}
+        <OrbitControls enableZoom={false} enablePan={false} />
+        <Environment preset="sunset" background={false} />
       </Canvas>
       {/* Head Line */}
       <h1 className="headTAG">
