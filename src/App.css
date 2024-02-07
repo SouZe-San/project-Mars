@@ -1,3 +1,22 @@
+/* Font load  */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap");
+
+/* Fonts Load From DIsk */
+@font-face {
+  font-family: "NewMars";
+  src: url("../src/assets/fonts/NewMars.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MarsProject";
+  src: url("../src/assets/fonts/MarsProject.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SeldomScene";
+  src: url("../src/assets/fonts/SeldomScene.woff") format("woff");
+}
+
 .bgBlur {
   background: url("./assets/bg/noisy-texture-300x300-o5-d10-c-18181a-t1.png") center center fixed,
     #0f0f0f7a;

@@ -9,32 +9,67 @@
 }
 
 #heroSection {
-
-    #Canvas {
-        position: absolute !important;
-
-        height: 70vh !important;
+    height: calc(100vh - 6rem);
 
 
-    }
-
-    .headTAG {
-        position: relative;
-        z-index: -2;
-        font-size: 20rem;
-        // font-size: 22.6rem;
-        letter-spacing: 5rem;
-        padding-top: 5rem;
-        color: #711111;
-        padding-left: 7rem;
+    .middle_section {
         display: flex;
-        gap: 22rem;
+        justify-content: center;
+        align-items: center;
+
+        #Canvas {
+            position: absolute !important;
+            // top: 8rem;
+            // height: 60vh !important;
+            // height: 100% !important;
+
+        }
+
+        svg {
+            circle {
+                fill: transparent;
+                stroke: rgba(232, 67, 2, 0.4);
+                stroke-width: 0.13;
+            }
+        }
+
+        .headTAG {
+            position: relative;
+            z-index: -2;
+            font-size: 20rem;
+            // font-family: 'SeldomScene', sans-serif;
+            font-family: 'NewMars', sans-serif;
+            // letter-spacing: 5rem;
+            letter-spacing: 2rem;
+            padding-top: 5rem;
+            color: #711111;
+            // padding-left: 7rem;
+            display: flex;
+            // gap: 22rem;
+            gap: 18rem;
+        }
     }
 
     // Other Decoration Div
-    .other_decoration {
+    .Other_decoration {
+        font-family: "MarsProject", sans-serif;
         display: flex;
         padding: 0 6rem;
         justify-content: space-between;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+
+        .right_tickets {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 6rem
+            }
+
+
+
+
+        }
     }
 }
