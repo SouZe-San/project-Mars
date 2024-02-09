@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className="absolute left_blob blob"></div>
       <div className="absolute right_blob blob"></div>
       {/* 3d Marse  */}
-      <div className="middle_section relative mt-24">
+      <div className="middle_section relative my-24">
         <svg
           className="absolute z-10"
           viewBox="0 0 100 100"
