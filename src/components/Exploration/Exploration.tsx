@@ -5,12 +5,21 @@ import "./style.scss";
 
 const Exploration = () => {
   //
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
 
   const TourText = [
-    { id: 1, text: "Text for Div 1" },
-    { id: 2, text: "Text for Div 2" },
-    { id: 3, text: "Text for Div 3" },
+    {
+      id: 1,
+      text: "Mars was named by the ancient Romans for their god of war because reddish color was reminiscent of blood. Other civilizations also named the planet for this attribute - for example, the Egyptians called it 'Her Desher', meaning 'the red one'.",
+    },
+    {
+      id: 2,
+      text: "Thin as a sigh, Mars' atmosphere struggles to hold warmth, leaving its rusty plains frozen under a hazy red sky.",
+    },
+    {
+      id: 3,
+      text: "Dusty gales whip across a rusty landscape, carving canyons through ancient rock. The thin air shimmers, a silent promise of secrets held within, waiting for rovers to decipher.",
+    },
   ];
 
   //Random Positioning dot

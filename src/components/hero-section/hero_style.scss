@@ -26,9 +26,11 @@
         }
 
         svg {
+            // animation: rotating 7s linear infinite;
+
             circle {
-                fill: transparent;
-                stroke: rgba(232, 67, 2, 0.4);
+                // fill: transparent;
+                stroke: #e8430266;
                 stroke-width: 0.13;
             }
         }
@@ -71,5 +73,16 @@
 
 
         }
+    }
+}
+
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
