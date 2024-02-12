@@ -2,6 +2,7 @@
 
 // Component import
 import Exploration from "../../components/Exploration/Exploration";
+import Gallery from "../../components/Gallery/Gallery";
 import HeroSection from "../../components/hero-section/HeroSection";
 import Navbar from "../../components/navbar/Navbar";
 
@@ -23,7 +24,10 @@ const Home = () => {
       <section className="exploration-section">
         <Exploration />
       </section>
-      this is home
+      {/* Gallery Or Marsian Life */}
+      <section className=" px-24 mt-16 w-full h-screen">
+        <Gallery />
+      </section>
     </div>
   );
 };
