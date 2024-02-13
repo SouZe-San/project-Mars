@@ -9,6 +9,8 @@ section.hero-section {
 
     header {
         height: 10%;
+        position: relative;
+        z-index: 99;
     }
 }
 
