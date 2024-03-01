@@ -1,4 +1,4 @@
-// import React from 'react'
+import { useState } from "react";
 
 // Component import
 import ArrowIcon from "../../components/Arrow/ArrowIcon";
@@ -12,6 +12,11 @@ import TextSlider from "../../components/textSlideing/TextSlider";
 import "./home_style.scss";
 
 const Home = () => {
+  const [whatBtnClicked, setWhatBtnClicked] = useState<btnProps>({
+    posNumber: 0,
+    whatSideClicked: "",
+  });
+
   return (
     <div className="bgBlur ">
       <section className="hero-section relative">
@@ -28,19 +33,37 @@ const Home = () => {
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Gallery Or Marsian Life    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/}
       <section className=" px-24 mt-16 w-full h-screen relative flex flex-col justify-center">
+        {/* //^ ARROW BUTTON  */}
         <div className="absolute flex justify-between w-full left-0">
           {/*//! if Clicked the transform translate: 25%; */}
-
-          <div className="rotate-180 cursor-pointer">
+          <div
+            className="rotate-180 cursor-pointer"
+            onClick={() => {
+              if (whatBtnClicked.posNumber !== 0)
+                setWhatBtnClicked({
+                  posNumber: whatBtnClicked.posNumber - 1,
+                  whatSideClicked: "leftBtn",
+                });
+            }}
+          >
             <ArrowIcon />
           </div>
-
           {/*//!if Clicked the transform translate: -25%; */}
-          <div className=" cursor-pointer">
+          <div
+            className=" cursor-pointer"
+            onClick={() => {
+              if (whatBtnClicked.posNumber <= 8)
+                setWhatBtnClicked({
+                  posNumber: whatBtnClicked.posNumber + 1,
+                  whatSideClicked: "rightBtn",
+                });
+            }}
+          >
             <ArrowIcon />
           </div>
         </div>
-        <Gallery />
+
+        <Gallery whatBtnClicked={whatBtnClicked} />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - MARS PLANET     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
@@ -54,6 +77,7 @@ const Home = () => {
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - SPACE TRAVEL     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    SOME NEWS    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    CONTACT ME    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+      {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    FOOTER    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
     </div>
   );
 };

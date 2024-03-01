@@ -8,13 +8,13 @@ const TextSlider = ({ text }: { text: string }) => {
     for (let i: number = 0; i < 3; i++) {
       if (i === index) {
         returnArray.push(
-          <span className={`${cls} text-red-500`}>
+          <span key={i} className={`${cls} text-red-500`}>
             {text} <img src={marSvg} alt="" />
           </span>
         );
       } else {
         returnArray.push(
-          <span className={cls}>
+          <span key={i} className={cls}>
             {text} <img src={marSvg} alt="" />
           </span>
         );
