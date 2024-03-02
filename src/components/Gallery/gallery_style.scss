@@ -5,6 +5,7 @@
     overflow: hidden;
     position: relative;
     width: fit-content;
+    transition: transform 650ms ease-in-out;
 
     .card {
         justify-content: space-around;
