@@ -45,7 +45,8 @@ const Gallery = ({ whatBtnClicked }: { whatBtnClicked: btnProps }) => {
         setHoveredIndex(hoveredIndex - 1);
       }
     }
-  }, [hoveredIndex, whatBtnClicked]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [whatBtnClicked]);
 
   return (
     <div className="h-full overflow-hidden relative">

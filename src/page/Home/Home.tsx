@@ -7,6 +7,7 @@ import Gallery from "../../components/Gallery/Gallery";
 import HeroSection from "../../components/hero-section/HeroSection";
 import Navbar from "../../components/navbar/Navbar";
 import TextSlider from "../../components/textSlideing/TextSlider";
+import ProcessProcessing from "../../components/ProcessProcessing/ProcessProcessing";
 
 // style import
 import "./home_style.scss";
@@ -52,7 +53,8 @@ const Home = () => {
           <div
             className=" cursor-pointer"
             onClick={() => {
-              if (whatBtnClicked.posNumber <= 8)
+              // arrayLength - 2
+              if (whatBtnClicked.posNumber < 5)
                 setWhatBtnClicked({
                   posNumber: whatBtnClicked.posNumber + 1,
                   whatSideClicked: "rightBtn",
@@ -67,12 +69,18 @@ const Home = () => {
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - MARS PLANET     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
-      <section className="mt-16">
+      <section className="mt-20 pb-16">
         <TextSlider text="Mars Planet" />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    PROCESS FOR PROCESSING     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+
+      <section className="mt-16 px-24 w-full h-screen">
+        <ProcessProcessing />
+      </section>
+
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    TICKET CENTER     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    FACT SECTION    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - SPACE TRAVEL     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    SOME NEWS    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
