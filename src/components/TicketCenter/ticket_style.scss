@@ -1,0 +1,75 @@
+.ticket {
+    position: relative;
+    border: 1px solid;
+    width: 30%;
+    overflow: hidden;
+    border-radius: 10px;
+    // height: 37rem;
+
+
+    img {
+        object-fit: contain;
+        filter: grayscale(1);
+        height: 100%;
+        right: -25%;
+        z-index: -1;
+        mask-image: linear-gradient(to bottom, black, #00000091 35%, transparent 100%);
+    }
+
+
+    .ticket-head {
+        font-family: "MarsProject";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .ticket-name {
+            font-size: 1.5rem;
+            // line-height: 0.7;
+        }
+
+        .ticket-price {
+
+            font-size: 2.8rem;
+        }
+    }
+
+    .ticket-body {
+        color: #c0c0c0c1;
+
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .ticket-footer {
+            span {
+                transform: scale(1.05);
+            }
+
+            img {
+                transform: scale(1.3);
+            }
+        }
+    }
+
+    .ticket-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        Span {
+            font-size: 1.7rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        gap:10px;
+
+        img {
+            transition: transform 0.4s ease-in-out;
+            width: 25%;
+        }
+    }
+
+}

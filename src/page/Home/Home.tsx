@@ -8,6 +8,8 @@ import HeroSection from "../../components/hero-section/HeroSection";
 import Navbar from "../../components/navbar/Navbar";
 import TextSlider from "../../components/textSlideing/TextSlider";
 import ProcessProcessing from "../../components/ProcessProcessing/ProcessProcessing";
+import TicketContainer from "../../components/TicketCenter/Container";
+import FactSection from "../../components/Fact-section/FactSection";
 
 // style import
 import "./home_style.scss";
@@ -75,13 +77,22 @@ const Home = () => {
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    PROCESS FOR PROCESSING     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
 
-      <section className="mt-16 px-24 w-full h-screen">
+      <section id="process" className="mt-16 px-24 w-full h-[80vh]">
         <ProcessProcessing />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    TICKET CENTER     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
 
+      <section id="ticket" className="mt-16 px-24 w-full h-screen">
+        <h1 className="header_tag mb-12">Available ticket</h1>
+        <TicketContainer />
+      </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    FACT SECTION    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+
+      <section className="mt-16 w-full px-24 h-screen">
+        <h1 className="header_tag mb-12">Lifelong Facts</h1>
+        <FactSection />
+      </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - SPACE TRAVEL     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    SOME NEWS    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    CONTACT ME    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
