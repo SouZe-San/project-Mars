@@ -3,13 +3,15 @@ import { useState } from "react";
 // Component import
 import ArrowIcon from "../../components/Arrow/ArrowIcon";
 import Exploration from "../../components/Exploration/Exploration";
+import FactSection from "../../components/Fact-section/FactSection";
 import Gallery from "../../components/Gallery/Gallery";
 import HeroSection from "../../components/hero-section/HeroSection";
+import marsSvg from "../../assets/iconSvg/mars.svg";
 import Navbar from "../../components/navbar/Navbar";
-import TextSlider from "../../components/textSlideing/TextSlider";
 import ProcessProcessing from "../../components/ProcessProcessing/ProcessProcessing";
+import rocketSvg from "../../assets/iconSvg/rocket.png";
+import TextSlider from "../../components/textSlideing/TextSlider";
 import TicketContainer from "../../components/TicketCenter/Container";
-import FactSection from "../../components/Fact-section/FactSection";
 
 // style import
 import "./home_style.scss";
@@ -72,7 +74,7 @@ const Home = () => {
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - MARS PLANET     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       <section className="mt-20 pb-16">
-        <TextSlider text="Mars Planet" />
+        <TextSlider text="Mars Planet" img={marsSvg} />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    PROCESS FOR PROCESSING     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
@@ -94,7 +96,15 @@ const Home = () => {
         <FactSection />
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - SPACE TRAVEL     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+
+      <section className="mt-20 pb-16">
+        <TextSlider text="SPACE TRAVEL" img={rocketSvg} />
+      </section>
+
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    SOME NEWS    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+      <section id="news" className="mt-16 px-24 w-full h-screen">
+        <h1 className="header_tag mb-12">Marsian News</h1>
+      </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    CONTACT ME    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    FOOTER    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
     </div>

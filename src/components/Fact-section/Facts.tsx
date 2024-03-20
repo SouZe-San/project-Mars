@@ -1,16 +1,13 @@
 // import React from 'react'
 
-const Facts = () => {
+const Facts = ({ fact }: { fact: factsProps }) => {
   return (
-    <div className="rounded-full">
+    <div className="rounded-full facts">
       <h1>
-        Fact <span>01:</span>
-        Forth Rock
+        Fact <span className="mr-4">0{fact.index}: </span>
+        {fact.title}
       </h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.
-      </p>
+      <p>{fact.des}</p>
     </div>
   );
 };

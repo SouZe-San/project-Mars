@@ -1,0 +1,63 @@
+.fact-section {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 0 5vw;
+    flex-wrap: wrap;
+
+
+    .note {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .facts {
+        width: 19vw;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ffffff29;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: #5554541a;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+
+        &:nth-child(odd) {
+            position: relative;
+            top: 40%;
+        }
+
+        h1 {
+
+            font-family: "MarsProject";
+            font-size: 1.3rem;
+            position: absolute;
+            transition: all 0.4s ease-in-out;
+        }
+
+        p {
+            padding: 0 1.4rem;
+            transform: scale(0);
+            color: transparent;
+            transition: transform .5s ease-in-out .2s;
+        }
+
+        ;
+
+        &:hover {
+            h1 {
+                transform: scale(0);
+                color: transparent;
+            }
+
+            background: #dfdddd3d;
+
+            p {
+                transform: scale(1);
+                color: #fff;
+            }
+        }
+    }
+}

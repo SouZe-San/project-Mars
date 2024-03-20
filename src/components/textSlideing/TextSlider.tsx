@@ -1,7 +1,6 @@
 // import React from 'react'
 import "./style.scss";
-import marSvg from "../../assets/iconSvg/mars.svg";
-const TextSlider = ({ text }: { text: string }) => {
+const TextSlider = ({ text, img }: { text: string; img: string }) => {
   const repeatText = (index: number, cls: string): JSX.Element[] => {
     const returnArray: JSX.Element[] = [];
 
@@ -9,14 +8,14 @@ const TextSlider = ({ text }: { text: string }) => {
       if (i === index) {
         returnArray.push(
           <span key={i} className={`${cls} text-red-500`}>
-            {text} <img src={marSvg} alt="" />
+            {text} <img src={img} alt="" />
           </span>
         );
         index = index + 2;
       } else {
         returnArray.push(
           <span key={i} className={cls}>
-            {text} <img src={marSvg} alt="" />
+            {text} <img src={img} alt="" />
           </span>
         );
       }
