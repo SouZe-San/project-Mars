@@ -8,6 +8,7 @@ import Gallery from "../../components/Gallery/Gallery";
 import HeroSection from "../../components/hero-section/HeroSection";
 import marsSvg from "../../assets/iconSvg/mars.svg";
 import Navbar from "../../components/navbar/Navbar";
+import NewsSection from "../../components/NewsSection/NewsSection";
 import ProcessProcessing from "../../components/ProcessProcessing/ProcessProcessing";
 import rocketSvg from "../../assets/iconSvg/rocket.png";
 import TextSlider from "../../components/textSlideing/TextSlider";
@@ -102,10 +103,12 @@ const Home = () => {
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    SOME NEWS    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
-      <section id="news" className="mt-16 px-24 w-full h-screen">
+      <section id="news" className="mt-16 pl-24 w-full h-screen">
         <h1 className="header_tag mb-12">Marsian News</h1>
+        <NewsSection />
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    CONTACT ME    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    FOOTER    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
     </div>
   );
