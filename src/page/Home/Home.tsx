@@ -13,6 +13,8 @@ import ProcessProcessing from "../../components/ProcessProcessing/ProcessProcess
 import rocketSvg from "../../assets/iconSvg/rocket.png";
 import TextSlider from "../../components/textSlideing/TextSlider";
 import TicketContainer from "../../components/TicketCenter/Container";
+import Contacts from "../../components/Contacts/Contacts";
+import Footer from "../../components/Footer/Footer";
 
 // style import
 import "./home_style.scss";
@@ -108,8 +110,15 @@ const Home = () => {
         <NewsSection />
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    CONTACT ME    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+      <section id="contacts" className="mt-16 py-20 px-24 w-full">
+        <Contacts />
+      </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    FOOTER    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
