@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import "./gallery_style.scss";
 // Images Importing
 import img1 from "../../assets/gallery_image/mars_1.jpeg";
@@ -6,11 +7,18 @@ import img2 from "../../assets/gallery_image/mars_2.jpg";
 import img3 from "../../assets/gallery_image/mars_3.jpg";
 import img4 from "../../assets/gallery_image/mars_4.webp";
 
-// interface btnProps {
-//   whatBtnClicked: "" | "rightBtn" | "leftBtn";
-// }
+const Gallery = ({
+  whatBtnClicked,
+  setWhatBtnClicked,
+}: {
+  whatBtnClicked: btnProps;
+  setWhatBtnClicked: React.Dispatch<React.SetStateAction<btnProps>>;
+}) => {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
 
-const Gallery = ({ whatBtnClicked }: { whatBtnClicked: btnProps }) => {
   const images = [img1, img2, img4, img3, img1, img2, img4];
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,8 +56,29 @@ const Gallery = ({ whatBtnClicked }: { whatBtnClicked: btnProps }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [whatBtnClicked]);
 
+  useEffect(() => {
+    if (inView) {
+      const interval = setTimeout(() => {
+        if (whatBtnClicked.posNumber < 5) {
+          setWhatBtnClicked({
+            posNumber: whatBtnClicked.posNumber + 1,
+            whatSideClicked: "rightBtn",
+          });
+        } else {
+          setWhatBtnClicked({
+            posNumber: 0,
+            whatSideClicked: "",
+          });
+          setCurrentHovered(1);
+          setHoveredIndex(currentHovered);
+        }
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [whatBtnClicked, inView]);
+
   return (
-    <div className="h-full overflow-hidden relative">
+    <div className="h-full overflow-hidden relative" ref={ref}>
       <h1 className="header_tag mb-12">Gallery or Marsian Life</h1>
 
       <div className="card_container relative flex justify-center" ref={containerRef}>

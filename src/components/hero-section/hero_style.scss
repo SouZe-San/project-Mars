@@ -16,6 +16,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
 
         #Canvas {
             position: absolute !important;
@@ -26,7 +27,8 @@
         }
 
         svg {
-            // animation: rotating 7s linear infinite;
+            animation: rotating 7s linear infinite;
+            scale: .94;
 
             circle {
                 // fill: transparent;

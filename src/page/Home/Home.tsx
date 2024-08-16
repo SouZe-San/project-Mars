@@ -72,7 +72,7 @@ const Home = () => {
           </div>
         </div>
 
-        <Gallery whatBtnClicked={whatBtnClicked} />
+        <Gallery whatBtnClicked={whatBtnClicked} setWhatBtnClicked={setWhatBtnClicked} />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - MARS PLANET     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}

@@ -2,9 +2,23 @@ import ArrowIcon from "../Arrow/ArrowIcon";
 
 // import React from 'react'
 
-const NewsItems = ({ news, color }: { news: string; color: string }) => {
+const NewsItems = ({
+  news,
+  color,
+  currentIndex,
+  index,
+}: {
+  news: string;
+  color: string;
+  currentIndex: number;
+  index: number;
+}) => {
   return (
-    <div className={`outer ${color + "Before"} relative rounded-2xl`}>
+    <div
+      className={`outer ${color + "Before"} relative rounded-2xl ${
+        currentIndex === index ? "scale-100" : "scale-[.85]"
+      }`}
+    >
       <div className="news-card pb-16 pt-8">
         <div className="news-star">⭐</div>
         <div className="card-cut flex">

@@ -23,7 +23,7 @@ const MarsModel = () => {
 
   const position: Vector3 | [number, number, number] = [0, 0, 0];
   return (
-    <mesh position={position} ref={goLoRef} rotation={[0, 0, 1]} scale={1.2}>
+    <mesh position={position} ref={goLoRef} rotation={[0, 0, 1]} scale={1.1}>
       <sphereGeometry args={[1.4, 55, 55]} />
       <meshStandardMaterial
         map={colorMap}

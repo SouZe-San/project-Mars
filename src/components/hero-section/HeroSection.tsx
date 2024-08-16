@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import "./hero_style.scss";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-// import MarsModel from "../mars_model/MarsModel.tsx";
+import MarsModel from "../mars_model/MarsModel.tsx";
 
 import img from "../../assets/hero-section/arrow.svg";
 const HeroSection = () => {
@@ -26,7 +26,9 @@ const HeroSection = () => {
           <circle cx="37" cy="61" r=".3" fill="#e84302" />
         </svg>
         <Canvas camera={{ position: [0, 0, 3.1] }} id="Canvas" shadows>
-          <Suspense fallback={null}>{/* <MarsModel /> */}</Suspense>
+          <Suspense fallback={<>Mars Coming ....</>}>
+            <MarsModel />
+          </Suspense>
           <OrbitControls enableZoom={false} enablePan={false} />
           <Environment preset="sunset" background={false} />
         </Canvas>

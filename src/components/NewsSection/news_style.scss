@@ -44,6 +44,9 @@
     }
 }
 
+.outer {
+    transition: all .3s ease-in-out;
+}
 
 .outer::before {
     border-radius: 16px;

@@ -1,6 +1,15 @@
 .bgBlur {
-
+    flex-basis: 50%;
     width: 100vw;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+
+}
+
+
+section {
+    scroll-snap-align: center;
 }
 
 section.hero-section {

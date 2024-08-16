@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-
 import "./circle-processBar.scss";
-
+import CountUp from "react-countup";
 interface propsTypes {
   limit: number;
   percentage: number;
+  durationLimit: number;
 }
-const CircularProgress = ({ limit, percentage }: propsTypes) => {
+const CircularProgress = ({ limit, percentage, durationLimit }: propsTypes) => {
   const [stoke, setStroke] = useState(452);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const CircularProgress = ({ limit, percentage }: propsTypes) => {
         setStroke((prev) => {
           return (prev = prev - 1);
         });
-      }, 4);
+      }, 1);
       return () => clearInterval(interval);
     }
   }, [stoke, limit]);
@@ -35,7 +35,9 @@ const CircularProgress = ({ limit, percentage }: propsTypes) => {
         ></circle>
       </svg>
 
-      <div className="time">{percentage}%</div>
+      <div className="time ">
+        <CountUp start={0} end={percentage * 1000} duration={durationLimit} /> M %
+      </div>
     </div>
   );
 };
