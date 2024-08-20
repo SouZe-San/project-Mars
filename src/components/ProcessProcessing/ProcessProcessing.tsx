@@ -1,4 +1,3 @@
-// import React from 'react'
 import CircularProgress from "./CircularProgress ";
 import "./process-style.scss";
 import { useInView } from "react-intersection-observer";

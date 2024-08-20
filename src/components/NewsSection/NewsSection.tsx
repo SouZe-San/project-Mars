@@ -12,16 +12,6 @@ const newsData = [
 ];
 const colorData = ["red", "yellow", "orange", "blue"];
 
-// const NewsRetrieve = (): JSX.Element[] => {
-//   const newsArray: JSX.Element[] = [];
-//   for (let i = 0; i < 6; i++) {
-//     newsArray.push(
-//       <NewsItems news={newsData[i % 3]} color={colorData[i % 4]} key={i} currentIndex={currentIndex}/>
-//     );
-//   }
-//   return newsArray;
-// };
-
 const NewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 

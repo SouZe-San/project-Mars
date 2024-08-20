@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Component import
 import ArrowIcon from "../../components/Arrow/ArrowIcon";
@@ -24,23 +24,47 @@ const Home = () => {
     posNumber: 0,
     whatSideClicked: "",
   });
+  const scrollDivContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = document.getElementById("scrollContainer");
+
+    if (scrollContainer) {
+      const handleScroll = () => {
+        const scrollTop = scrollContainer.scrollTop;
+        if (scrollTop <= 816) {
+          scrollDivContainerRef.current!.style.transform = `translateY(${scrollTop}px) translateX(-${Math.min(
+            25,
+            Math.max(0, (scrollTop / 816) * 25)
+          )}%)`;
+        }
+      };
+
+      scrollContainer.addEventListener("scroll", handleScroll);
+      return () => {
+        scrollContainer.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
 
   return (
-    <div className="bgBlur ">
+    <div className="bgBlur " id="scrollContainer">
       <section className="hero-section relative">
         {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    NavSection    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/}
         <header>
           <Navbar />
         </header>
         {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    HeroSection    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/}
-        <HeroSection />
+        <HeroSection scrollDivContainerRef={scrollDivContainerRef} />
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    ExplorationSection    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/}
+
       <section className="exploration-section">
         <Exploration />
       </section>
+
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Gallery Or Marsian Life    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/}
-      <section className=" px-24 mt-16 w-full h-screen relative flex flex-col justify-center">
+      <section className="scroll-Y-section  px-24 mt-16 w-full h-screen relative flex flex-col justify-center">
         {/* //^ ARROW BUTTON  */}
         <div className="absolute flex justify-between w-full left-0">
           {/*//! if Clicked the transform translate: 25%; */}
@@ -76,41 +100,41 @@ const Home = () => {
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - MARS PLANET     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
-      <section className="mt-20 pb-16">
+      <section className="scroll-Y-section mt-20 pb-16">
         <TextSlider text="Mars Planet" img={marsSvg} />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    PROCESS FOR PROCESSING     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
 
-      <section id="process" className="mt-16 px-24 w-full h-[80vh]">
+      <section id="process" className="scroll-Y-section mt-16 px-24 w-full h-[80vh]">
         <ProcessProcessing />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    TICKET CENTER     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
 
-      <section id="ticket" className="mt-16 px-24 w-full h-screen">
+      <section id="ticket" className="scroll-Y-section mt-16 px-24 w-full h-screen pt-12">
         <h1 className="header_tag mb-12">Available ticket</h1>
         <TicketContainer />
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    FACT SECTION    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
 
-      <section className="mt-16 w-full px-24 h-screen">
+      <section className="scroll-Y-section mt-16 w-full px-24 h-screen pt-12">
         <h1 className="header_tag mb-12">Lifelong Facts</h1>
         <FactSection />
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    Text Sliding - SPACE TRAVEL     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
 
-      <section className="mt-20 pb-16">
+      <section className="scroll-Y-section mt-20 pb-16">
         <TextSlider text="SPACE TRAVEL" img={rocketSvg} />
       </section>
 
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    SOME NEWS    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
-      <section id="news" className="mt-16 pl-24 w-full h-screen">
+      <section id="news" className="scroll-Y-section mt-16 pl-24 w-full h-screen pt-12">
         <h1 className="header_tag mb-12">Marsian News</h1>
         <NewsSection />
       </section>
       {/*// @@@@@@@@@@@@@@@@@@@@@@@@@@@@    CONTACT ME    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */}
-      <section id="contacts" className="mt-16 py-20 px-24 w-full">
+      <section id="contacts" className="scroll-Y-section mt-16 py-20 px-24 w-full">
         <Contacts />
       </section>
 

@@ -17,6 +17,7 @@
         margin: 1.2rem auto;
 
         img {
+            animation: slideOutIn 2s ease-in-out infinite;
             width: 6rem
         }
     }

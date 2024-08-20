@@ -20,7 +20,6 @@ interface TicketProps {
   serviceAvailable: string[];
 }
 
-// import imag from "../../assets/rockets/rocket-1.png";
 const Ticket = (props: TicketProps) => {
   const { img, ticketName, color, price, serviceAvailable } = props;
   const brCol = color + "59";
