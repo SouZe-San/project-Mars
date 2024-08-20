@@ -39,6 +39,7 @@ This is a simple UI design of a Mars Travels website. This is a simple project t
 
 ## One Glance 🎥
 
+https://github.com/user-attachments/assets/8be61c36-7932-44ab-bd5b-c3ce7fd4f536
 
 ##  Some Shots 📸 !!
 
