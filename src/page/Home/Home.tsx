@@ -28,7 +28,6 @@ const Home = () => {
 
   useEffect(() => {
     const scrollContainer = document.getElementById("scrollContainer");
-
     if (scrollContainer) {
       const handleScroll = () => {
         const scrollTop = scrollContainer.scrollTop;
@@ -37,6 +36,11 @@ const Home = () => {
             25,
             Math.max(0, (scrollTop / 816) * 25)
           )}%)`;
+
+          (scrollDivContainerRef.current!.children[0] as HTMLElement).style.opacity = `${Math.max(
+            0,
+            1 - scrollTop / 816
+          )}`;
         }
       };
 
